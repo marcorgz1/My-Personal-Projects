@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ Accordion</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: grid;
+            place-content: center;
+            height: 100vh;
+            font-family: 'Work Sans', sans-serif;
+            background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, hsl(275, 100%, 97%) 50%), url('./assets/images/background-pattern-desktop.svg');
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            background: #fff;
+            width: 55%;
+            margin: auto;
+            padding: 30px;
+
+            & .title {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                & h1 {
+                    font-size: 36px;
+                }
+            }
+
+            & .questions {
+                margin-top: 25px;
+            }
+
+            & .question {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 15px;
+
+                & img {
+                    cursor: pointer;
+                }
+            }
+            
+            & .answer {
+                margin-bottom: 30px;                
+
+                & p {
+                    display: none;
+                }
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="title">
+            <img src="./assets/images/icon-star.svg" alt="Star Icon">
+            <h1>FAQs</h1>
+        </section>
+        <section class="questions">
+            <div class="question">
+                <h4>What is Frontend Mentor, and how will it help me?</h4>
+                <img src="./assets/images/icon-plus.svg" id="plus-button" alt="Plus Icon">
+            </div>
+            <div class="answer">
+                <p id="answer">
+                    Frontend Mentor offers realistic coding challenges to help developers improve their
+                    frontend coding skills with projects in HTML, CSS, and JavaScript. It's suitable for
+                    all levels and ideal for portfolio building.
+                </p>
+            </div>
+            <div class="question">
+                <h4>Is Frontend Mentor free?</h4>
+                <img src="./assets/images/icon-plus.svg" id="plus-button" alt="Plus Icon">
+            </div>
+            <div class="answer">
+                <p id="answer">
+                    Yes, Frontend Mentor offers both free and premium coding challenges, with the free
+                    option providing access to a range of projects suitable for all skill levels.
+                </p>
+            </div>
+            <div class="question">
+                <h4>Can I use Frontend Mentor projects in my portfolio?</h4>
+                <img src="./assets/images/icon-plus.svg" id="plus-button" alt="Plus Icon">
+            </div>
+            <div class="answer">
+                <p id="answer">
+                    Yes, you can use projects completed on Frontend Mentor in your portfolio. It's an excellent
+                    way to showcase your skills to potential employers!
+                </p>
+            </div>
+            <div class="question">
+                <h4>How can I get help if I'm stuck on a Frontend Mentor challenge?</h4>
+                <img src="./assets/images/icon-plus.svg" id="plus-button" alt="Plus Icon">
+            </div>
+            <div class="answer">
+                <p id="answer">
+                    The best place to get help is inside Frontend Mentor's Discord community. There's a help
+                    channel where you can ask questions and seek support from other community members.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const $plusButtons = document.querySelectorAll('#plus-button')
+        const $answers = document.querySelectorAll('#answer')
+
+        for (let $plusButton of $plusButtons) {
+            $plusButton.addEventListener('click', (event) => {
+                // Recuperar botón en el que ha hecho click el usuario
+                let buttonClicked = event.target
+
+                // Convertir la colección de botones en un array y obtener el índice
+                // del botón en el que ha hecho click el usuario
+                let index = Array.from($plusButtons).indexOf(buttonClicked)
+                // Si el índice de la repuesta en la que ha hecho click el usuario está oculta,
+                // es decir, tiene un "display: none"
+                if ($answers[index].style.display === 'none' || $answers[index].style.display === '') {
+                    // Mostrar dicha respuesta
+                    $answers[index].style.display = 'block'
+                    // Cambiar el ícono al de minus
+                    buttonClicked.src = './assets/images/icon-minus.svg'
+                // Por el contrario, si el índice correspondiente a la respuesta está abierto
+                } else {
+                    // Añadirle un "display: none" para ocultarla
+                    $answers[index].style.display = 'none'
+                    // Cambiar el ícono al de plus
+                    buttonClicked.src = './assets/images/icon-plus.svg'
+                }
+            })
+        }
+    </script>
+</body>
+</html>
