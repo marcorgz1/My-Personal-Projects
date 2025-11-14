@@ -6,11 +6,14 @@ import { useEffect } from 'react';
 import fetchCars from './api.js'
 
 
-function App() {
-  // Fetching data using axios
+function App() {  
   useEffect(() => {
     fetchCars();
   }, []);
+
+  const handleSubmit = (text) => {
+    console.log('The text:', text);
+  };
 
 
   // Fetching data using fetch
@@ -27,9 +30,7 @@ function App() {
   return (
     <div className="App">
       <h1>App</h1>
-      <SearchBar fetchCars={fetchCars} />
-      <ImageList />
-      <ImageShow />
+      <SearchBar onSubmit={handleSubmit} />
     </div>
   );
 }

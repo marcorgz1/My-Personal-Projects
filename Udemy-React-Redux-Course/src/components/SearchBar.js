@@ -1,16 +1,20 @@
 
 
-function SearchBar ({ fetchCars }) {
-    const handleClick = () => {
-        fetchCars('cars');
+function SearchBar ({ onSubmit }) {   
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        onSubmit();
     };
 
     return (
         <section>
-            <input />
-            <button onClick={handleClick}>Buscar</button>
+            <form onSubmit={handleSubmit}>
+                <input />
+                {/* <button>Send</button> */}
+            </form>
         </section>
-    )
+    );
 };
 
 export default SearchBar;

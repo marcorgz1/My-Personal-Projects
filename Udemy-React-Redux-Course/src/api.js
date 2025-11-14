@@ -3,6 +3,7 @@ import axios from 'axios';
 const apiKey = import.meta.env.VITE_UNSPLASH_API_ACCESS_KEY;
 
 const fetchCars = async () => {
+    // Fetching data using axios
     const response = await axios.get('https://api.unsplash.com/search/photos', {
         headers: {
             Authorization: `Client-ID ${apiKey}`
