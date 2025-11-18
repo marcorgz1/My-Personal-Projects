@@ -4,7 +4,7 @@ function SearchBar ({ onSubmit }) {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        onSubmit();
+        onSubmit('cars');
     };
 
     return (

@@ -12,7 +12,7 @@ function App() {
   }, []);
 
   const handleSubmit = (text) => {
-    console.log('The text:', text);
+    console.log('Doing a search with the following text:', text);
   };
 
 
