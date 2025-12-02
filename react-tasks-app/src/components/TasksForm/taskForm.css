@@ -1,0 +1,24 @@
+.task_form {
+    display: flex;
+    gap: 1.4rem;
+    margin-bottom: 2em;
+
+    & input {
+        padding: 0.2em;
+    }
+    
+    & button {
+        color: #fff;
+        background-color: blue;
+        padding: 0.5em;
+        border: 0;
+        border-radius: 0.4em;
+        font-weight: 600;
+
+        &:hover {
+            cursor: pointer;
+            background-color: #001F82;
+            transition: all .3s ease;
+        }
+    }
+}
