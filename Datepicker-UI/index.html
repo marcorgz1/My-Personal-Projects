@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="widspan=device-widspan, initial-scale=1.0">
+        <style>
+            
+            body {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                img {
+                    width: 20px;
+                }
+            }
+            
+            #calendarioCabeza {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 1px solid;
+
+                & input {
+                    padding: 4px;
+                }
+            }
+        
+            .weekdays {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 1.2em;
+                margin-bottom: 0.4em;
+            }
+
+            #columnaUno {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 0.8em;
+                margin: 1em;                
+            }
+
+            #calendarioCuerpo {
+                margin-top: 0.5em;
+                border: 1px solid;
+                
+                & table {
+                    border-collapse: collapse;
+                    &  span, td {
+                        padding: 0.4em;
+                    }
+                    
+                }
+            }
+        </style>
+        <title>Datepicker UI</title>
+    </head>
+    <body>
+        <div id="calendarioCabeza">
+            <input placeholder="dd/mm/aa" />
+            <button>
+                <img src="./assets/calendar.png" alt="calendar icon">
+            </button>
+        </div>
+        <div id="calendarioCuerpo">
+            <div id="columnaUno">
+                <img src="./assets/arrowLeft.png" alt="left arrow">
+                <span>December 2022</span>
+                <img src="./assets/arrrowRight.png" alt="right arrow">
+            </div>
+            <div class="weekdays">
+                <span>S</span>
+                <span>M</span>
+                <span>T</span>
+                <span>W</span>
+                <span>T</span>
+                <span>F</span>
+                <span>S</span>
+            </div>
+            <table border="1">
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>12</td>
+                    <td>13</td>
+                    <td>14</td>
+                    <td>15</td>
+                    <td>16</td>
+                    <td>17</td>
+                </tr>
+                <tr>
+                    <td>18</td>
+                    <td>19</td>
+                    <td>20</td>
+                    <td>21</td>
+                    <td>22</td>
+                    <td>23</td>
+                    <td>24</td>
+                </tr>
+                <tr>
+                    <td>25</td>
+                    <td>26</td>
+                    <td>27</td>
+                    <td>28</td>
+                    <td>29</td>
+                    <td>30</td>
+                    <td>31</td>
+                </tr>
+            </table>
+
+        </div>
+    </body>
+</html>
