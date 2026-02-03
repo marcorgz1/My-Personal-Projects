@@ -14,8 +14,11 @@ a:hover {
 }
 
 body {
+  display: flex;
+  place-content: center;
   color: #000;
   background: #eee;
+  min-height: 100vh;
 }
 
 h1 {
